@@ -5,6 +5,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthComponent } from './auth.component';
 import { RouterModule } from '@angular/router';
+import { AuthRoutingModule } from './auth-routing.module';
 
 
 @NgModule({
@@ -15,7 +16,12 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
+    AuthRoutingModule,
     RouterModule,
   ]
 })
-export class AuthModule { }
+export class AuthModule { 
+  constructor() {
+    console.warn('AuthModule has been loaded!');
+  }
+}
