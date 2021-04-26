@@ -18,4 +18,8 @@ import { RouterModule } from '@angular/router';
     RouterModule,
   ]
 })
-export class AdminModule { }
+export class AdminModule {
+  constructor() {
+    console.warn('AdminModule has been loaded!');
+  }
+ }

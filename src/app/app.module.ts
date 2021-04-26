@@ -16,9 +16,9 @@ import { LayoutComponent } from './layout/layout.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AdminModule,
+    LandingModule,
     AuthModule,
-    LandingModule
+    AdminModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

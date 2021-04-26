@@ -16,4 +16,8 @@ import { RouterModule } from '@angular/router';
     RouterModule,
   ]
 })
-export class LandingModule { }
+export class LandingModule { 
+  constructor() {
+    console.warn('LandingModule has been loaded!');
+  }
+}
