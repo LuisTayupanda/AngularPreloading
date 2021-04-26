@@ -9,13 +9,13 @@ const routes: Routes = [
   {
     path: '', component: LayoutComponent, children: [
       {
-        path: 'admin', component: AdminComponent, loadChildren: () => import('./admin/admin.module').then((m) => m.AdminModule),
+        path: 'landing', component: LandingComponent, loadChildren: () => import('./landing/landing.module').then((m) => m.LandingModule),
       },
       {
         path: 'auth', component: AuthComponent, loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
       },
       {
-        path: 'landing', component: LandingComponent, loadChildren: () => import('./landing/landing.module').then((m) => m.LandingModule),
+        path: 'admin', component: AdminComponent, loadChildren: () => import('./admin/admin.module').then((m) => m.AdminModule),
       },
     ]
   },
