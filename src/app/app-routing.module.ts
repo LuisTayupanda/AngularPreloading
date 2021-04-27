@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { NoPreloading, PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { QuicklinkStrategy } from 'ngx-quicklink';
 import { AdminComponent } from './admin/admin.component';
 import { AuthComponent } from './auth/auth.component';
 import { LandingComponent } from './landing/landing.component';
 import { LayoutComponent } from './layout/layout.component';
-import { PreloadService } from './preload/preload.service';
 
 const routes: Routes = [
   {
@@ -12,17 +12,18 @@ const routes: Routes = [
       {
         path: 'landing',
         component: LandingComponent,
-        data: { preload: true },
         loadChildren: () => import('./landing/landing.module').then((m) => m.LandingModule), 
       },
       {
         path: 'auth',
         component: AuthComponent,
-        data: { preload: true },
         loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
       },
       {
-        path: 'admin', component: AdminComponent, loadChildren: () => import('./admin/admin.module').then((m) => m.AdminModule),
+        path: 'admin',
+        component: AdminComponent,
+        data: { preload: false },
+        loadChildren: () => import('./admin/admin.module').then((m) => m.AdminModule),
       },
     ]
   },
@@ -30,8 +31,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes,
-    // { preloadingStrategy: NoPreloading } default
-    { preloadingStrategy: PreloadService }
+    { preloadingStrategy: QuicklinkStrategy }
   )],
   exports: [RouterModule]
 })
