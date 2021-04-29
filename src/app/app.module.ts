@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
 
+// Quicklink
+import { QuicklinkModule } from 'ngx-quicklink';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -13,6 +16,7 @@ import { LayoutComponent } from './layout/layout.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    QuicklinkModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
